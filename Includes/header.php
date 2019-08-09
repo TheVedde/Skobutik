@@ -14,7 +14,7 @@
                     <a class="nav-link" href="../Pages/participants.php">Deltagere</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Resultat</a>
+                    <a class="nav-link" href="../Pages/result.php">Resultat</a>
                 </li>
             </ul>
         </div>
