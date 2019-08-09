@@ -11,7 +11,7 @@
                     <a class="nav-link active" href="../">Hjem</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Deltagere</a>
+                    <a class="nav-link" href="../Pages/participants.php">Deltagere</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Resultat</a>

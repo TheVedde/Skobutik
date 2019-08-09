@@ -10,23 +10,23 @@ echo "Hello";
 
 ?>
 <div class="container" style="max-width: 400px;">
-    
-    <form action="/Handlers/shoeFormHandler.php" method="POST">
+   
+    <form action="../Handlers/shoeFormHandler.php" method="POST">
       <div class="form-group">
         <label for="name">Navn</label>
-        <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="navn" required>
+        <input type="text" class="form-control" id="name" name="name" aria-describedby="name" placeholder="navn" required>
       </div>
       <div class="form-group">
         <label for="email">email</label>
-        <input type="email" class="form-control" id="email" placeholder="email" required>
+        <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
       </div>
         <div class="form-group">
         <label for="shoesize">skostørrelse</label>
-        <input type="number" class="form-control" id="shoesize" placeholder="skostørrelse" required>
+        <input type="number" class="form-control" id="shoesize" name="shoesize" placeholder="skostørrelse" required>
       </div>
         <div class="form-group">
         <label for="age">Alder</label>
-        <input type="text" class="form-control" id="age" placeholder="Alder" required>
+        <input type="text" class="form-control" id="age" name="age" placeholder="Alder" required>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
