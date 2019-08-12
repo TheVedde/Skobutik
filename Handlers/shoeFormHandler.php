@@ -19,13 +19,15 @@ $query = "INSERT INTO Skobutik_contributers (name, age, email, shoeSize)
 VALUES ("."'$name'".", ".$age.", " . "'$email'" .", ".$shoeSize.");";
 
 $result = $mysql->query($query);
+$status = 1;
     
-header("location: ../");
+header("location: ../Pages/index.php?status=$status");
 }
 
 else {
     
-echo "you have already entered.";    
+$status = 3;
     
+header("location: ../Pages/index.php?status=$status");    
 }
 

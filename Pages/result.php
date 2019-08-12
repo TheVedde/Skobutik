@@ -34,26 +34,25 @@ $result = $mysql->query($query);
       function drawChart() {
 
         // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('number', 'People');
-        data.addColumn('number', 'size');
-        <?php 
+       var data = google.visualization.arrayToDataTable([
+        ['Size', 'Count', { role: 'style' } ],
+         <?php 
         while ($shoe = $result->fetch_assoc()){
 
             $size = $shoe['shoeSize'];
             $amount =  $shoe['cnt'];
 
-            echo "";
+            echo "['$size', $amount, 'color: blue'],";
         }
-        
         ?>
-        data.addRows([
-          [1, 35],
-          [2, 34],
-          [3, 11],
-          [4, 21],
-          [5, 23]
-        ]);
+        
+//        ['2020', 14, 'color: #76A7FA'],
+//        ['2030', 16, 'opacity: 0.2'],
+//        ['2040', 22, 'stroke-color: #703593; stroke-width: 4; fill-color: #C5A5CF'],
+//        ['2050', 28, 'stroke-color: #871B47; stroke-opacity: 0.6; stroke-width: 8; fill-color: #BC5679; fill-opacity: 0.2']
+        ]);         
+          
+
 
         // Set chart options
         var options = {'title':'Shoe sizes',
@@ -61,7 +60,7 @@ $result = $mysql->query($query);
                        'height':300};
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>
