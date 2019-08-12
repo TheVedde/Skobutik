@@ -5,10 +5,35 @@ include_once '../Includes/header.php';
 
 $mysql = db_connect();
 
-
-echo "Hello";
-
+$response = '';
+$alert_type = '';
+if(isset($_GET['status'])){
+    $status = $_GET['status'];
+    switch ($status) {
+        case 1:
+            $response = ' Thank you for your participation';
+            $alert_type = 'success';
+            break;
+        case 2:
+            $response = ' There seems to be a problem. Please try again later';
+            $alert_type = 'warning';
+            break;
+        case 3:
+            $response = 'You have already participated.';
+            $alert_type = 'secondary';
+            break;
+    }  
+}
 ?>
+
+<?php if (!empty($response)): ?>
+<div class="alert alert-<?php echo $alert_type; ?> alert-dismissible fade show" role="alert">
+  <strong>Hey</strong> <?php echo $response; ?>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php endif; ?>
 <div class="container" style="max-width: 400px;">
    
     <form action="../Handlers/shoeFormHandler.php" method="POST">
@@ -22,11 +47,11 @@ echo "Hello";
       </div>
         <div class="form-group">
         <label for="shoesize">skostørrelse</label>
-        <input type="number" class="form-control" id="shoesize" name="shoesize" placeholder="skostørrelse" required>
+        <input type="number" class="form-control" id="shoesize" name="shoesize" placeholder="skostørrelse" required min="5" max="60">
       </div>
         <div class="form-group">
         <label for="age">Alder</label>
-        <input type="text" class="form-control" id="age" name="age" placeholder="Alder" required>
+        <input type="text" class="form-control" id="age" name="age" placeholder="Alder" required min="10" max="100">
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
