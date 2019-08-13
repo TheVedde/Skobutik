@@ -34,27 +34,29 @@ if(isset($_GET['status'])){
   </button>
 </div>
 <?php endif; ?>
-<div class="container" style="max-width: 400px;">
-   
-    <form action="../Handlers/shoeFormHandler.php" method="POST">
-      <div class="form-group">
-        <label for="name">Navn</label>
-        <input type="text" class="form-control" id="name" name="name" aria-describedby="name" placeholder="navn" required>
-      </div>
-      <div class="form-group">
-        <label for="email">email</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
-      </div>
-        <div class="form-group">
-        <label for="shoesize">skostørrelse</label>
-        <input type="number" class="form-control" id="shoesize" name="shoesize" placeholder="skostørrelse" required min="5" max="60">
-      </div>
-        <div class="form-group">
-        <label for="age">Alder</label>
-        <input type="text" class="form-control" id="age" name="age" placeholder="Alder" required min="10" max="100">
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+<div class="card mx-auto" style="max-width: 400px; margin-top: 30px;">
+    <div class="card-body">
+         <h5 class="card-title text-center">Registrer din skostørrelse</h5>
+        <form action="../Handlers/shoeFormHandler.php" method="POST">
+          <div class="form-group">
+            <label for="name">Navn</label>
+            <input type="text" class="form-control" id="name" name="name" aria-describedby="name" placeholder="navn" required>
+          </div>
+          <div class="form-group">
+            <label for="email">email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
+          </div>
+            <div class="form-group">
+            <label for="shoesize">skostørrelse</label>
+            <input type="number" class="form-control" id="shoesize" name="shoesize" placeholder="skostørrelse" required min="5" max="60">
+          </div>
+            <div class="form-group">
+            <label for="age">Alder</label>
+            <input type="number" class="form-control" id="age" name="age" placeholder="Alder" required min="10" max="100">
+          </div>      
+    </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
 </div>
 
 <?php

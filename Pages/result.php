@@ -17,6 +17,7 @@ $result = $mysql->query($query);
   <head>
     <!-- these scripts are required for google chart to work -->
     <!--Load the AJAX API-->
+  
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
@@ -27,6 +28,7 @@ $result = $mysql->query($query);
 
       // Set a callback to run when the Google Visualization API is loaded.
       google.charts.setOnLoadCallback(drawChart);
+
 
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
@@ -42,37 +44,35 @@ $result = $mysql->query($query);
             $size = $shoe['shoeSize'];
             $amount =  $shoe['cnt'];
 
-            echo "['$size', $amount, 'color: blue'],";
+            echo "['$size', $amount, ' '],";
         }
         ?>
-        
-//        ['2020', 14, 'color: #76A7FA'],
-//        ['2030', 16, 'opacity: 0.2'],
-//        ['2040', 22, 'stroke-color: #703593; stroke-width: 4; fill-color: #C5A5CF'],
-//        ['2050', 28, 'stroke-color: #871B47; stroke-opacity: 0.6; stroke-width: 8; fill-color: #BC5679; fill-opacity: 0.2']
         ]);         
-          
-
-
+         
         // Set chart options
         var options = {'title':'Shoe sizes',
                        'width':500,
                        'height':300};
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
+      
     </script>
   </head>
 
   <body>
-    <!--Div that will hold the pie chart-->
-    <div id="chart_div"></div>
+      <div>
+      <!--Div that will hold the pie chart-->
+      <table class="columns mx-auto">
+        <tr>
+          <td><div id="chart_div" style="border: 1px solid #ccc"></div></td>
+        </tr>
+      </table>
+    </div>
   </body>
 </html>
-
-
 
 <?php
 include '../Includes/footer.php';

@@ -4,7 +4,6 @@ function db_connect(){
     if($mysqli->connect_error) {
         die("Connection Failed: " .$mysqli->connect_error);
     }
-    else {echo "Connected"; }
     return $mysqli;
 }
 // $mysqli = db_connect();
