@@ -40,15 +40,15 @@ if(isset($_GET['status'])){
         <form action="../Handlers/shoeFormHandler.php" method="POST">
           <div class="form-group">
             <label for="name">Navn</label>
-            <input type="text" class="form-control" id="name" name="name" aria-describedby="name" placeholder="navn" required>
+            <input type="text" class="form-control" id="name" name="name" aria-describedby="name" placeholder="Navn" required>
           </div>
           <div class="form-group">
-            <label for="email">email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
           </div>
             <div class="form-group">
-            <label for="shoesize">skostørrelse</label>
-            <input type="number" class="form-control" id="shoesize" name="shoesize" placeholder="skostørrelse" required min="5" max="60">
+            <label for="shoesize">Sko størrelse</label>
+            <input type="number" class="form-control" id="shoesize" name="shoesize" placeholder="Sko størrelse" required min="5" max="60">
           </div>
             <div class="form-group">
             <label for="age">Alder</label>

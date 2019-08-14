@@ -10,7 +10,7 @@ GROUP BY shoeSize;
 ";
 $result = $mysql->query($query);
 
-
+ 
 ?>
 
 <html>
@@ -21,7 +21,7 @@ $result = $mysql->query($query);
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
-        //google charts loader adn callback is required to work
+        //google charts loader and callback is required to work
        
       // Load the Visualization API and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
